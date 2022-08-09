@@ -1,9 +1,11 @@
 import { Component } from "react";
 
-class NameForm extends Component {
+export default class ChatForm extends Component {
     constructor(props) {
       super(props);
-      this.state = {value: ''};
+      this.state = {value: '',
+                    PlaceholderText: 'your name',
+                    PlaceholderTextarea: 'write your chat here..'};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,18 +16,23 @@ class NameForm extends Component {
     }
   
     handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
+      this.props.add(this.state.value)
       event.preventDefault();
     }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
-            
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+          
+            <div className="container">
+            <input className="form-control" style={{width: 500}} type="text" value={this.state.value} onChange={this.handleChange} placeholder={this.state.PlaceholderText}/>
+            <br></br>
+            <br></br>
+            <textarea placeholder={this.state.PlaceholderTextarea}>
+            </textarea>
+            <br></br>
+          <input type="submit" className="btn btn-primary" value="Submit" />
+          </div>
         </form>
       );
     }

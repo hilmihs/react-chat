@@ -1,7 +1,3 @@
-import React from 'react'
-
-export default function ChatOutput() {
-  return (
-    <div>ChatOutput</div>
-  )
+export default function ChatOutput(props) {
+    return <li>{props.todo.title}</li>
 }
