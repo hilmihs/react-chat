@@ -1,0 +1,45 @@
+.form-chat {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}
+
+.card-header {
+    width: 100%;
+    height: 75px;
+} 
+
+.box {
+    width: 90%;
+    margin: 25px auto;
+    background: #e8e3e3;
+    padding: 25px;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+    font-family: arial;
+    position: relative;
+}
+
+.sb2:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #e8e3e3;
+    border-top: 10px solid #e8e3e3;
+    border-bottom: 10px solid transparent;
+    left: -19px;
+    top: 6px;
+}
+
+.button-submit {
+    float: left;
+    margin-top: 20px;
+}
+
+.input-form {
+    width: 100%;
+    margin-bottom: 20px;
+}

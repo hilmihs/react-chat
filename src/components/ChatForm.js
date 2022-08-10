@@ -1,39 +1,45 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 
 export default class ChatForm extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: '',
-                    PlaceholderText: 'your name',
-                    PlaceholderTextarea: 'write your chat here..'};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      this.props.add(this.state.value)
-      event.preventDefault();
-    }
-  
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          
-            <div className="container">
-            <input className="form-control" style={{width: 500}} type="text" value={this.state.value} onChange={this.handleChange} placeholder={this.state.PlaceholderText}/>
-            <br></br>
-            <br></br>
-            <textarea placeholder={this.state.PlaceholderTextarea}>
-            </textarea>
-            <br></br>
-          <input type="submit" className="btn btn-primary" value="Submit" />
-          </div>
-        </form>
-      );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      pesan: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+ 
+  handleChange(event) {
+    this.setState({[event.target.name]: event.target.value });
+  }
+
+  
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state)
+    this.props.add(this.state.username, this.state.pesan)
+    this.setState({username: '', pesan: ''})
+    
+  }
+
+  render() {
+    return (
+      <div className="box sb2">
+      <form onSubmit={this.handleSubmit}>
+        <div className="container">
+          <input name="username" value={this.state.username} className="form-control input-form" style={{ width: 550 }} type="text" onChange={this.handleChange} placeholder='Tulis Username' />
+          <textarea name="pesan" value={this.state.pesan} className="form-control" onChange={this.handleChange} placeholder='Tulis pesan disini..' style={{ width: 550 }}>
+          </textarea>
+          <input type="submit" className="btn btn-primary button-submit" value="Post" />
+        </div>
+      </form>
+      </div>
+
+      
+    );
+  }
+}
