@@ -10,15 +10,19 @@
 } 
 
 .box {
-    width: 90%;
+    width: 89%;
+    float: left;
     margin: 25px auto;
     background: #e8e3e3;
     padding: 25px;
-    text-align: center;
+    flex-direction: column;
     font-weight: 900;
     color: #fff;
     font-family: arial;
     position: relative;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    /* background-color: blue; */
 }
 
 .sb2:before {
@@ -43,3 +47,73 @@
     width: 100%;
     margin-bottom: 20px;
 }
+
+.chat-text {
+    color: black;
+    display: flex;
+   
+    padding: 5px;
+    display: flex;
+  flex-direction: column;
+}
+.chat-username {
+    color: black;
+    display: flex;
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 5px;
+    display: flex;
+  flex-direction: column;
+}
+
+.chat-text {
+    color: black;
+    display: flex;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: medium;
+    display: flex;
+  flex-direction: column;
+}
+
+.icon-chat {
+    /* display: flex;
+    flex-wrap: wrap; */
+    width: 10%;
+    float: left;
+    margin-top: -0px;
+    /* background-color: red; */
+    padding: 13px;
+    
+    
+}
+.blue-color {
+    color:blue;
+}
+ 
+.green-color {
+    color:green;
+}
+ 
+.teal-color {
+    color:teal;
+}
+ 
+.yellow-color {
+color:yellow;
+}
+
+.red-color {
+    color:red;
+}
+/* .line-in-middle {
+    width:200px;
+    height:100px;
+    position: absolute;
+    z-index: -1;
+	  background: linear-gradient(to right, 
+	                              transparent 0%, 
+	                              transparent calc(50% - 0.81px), 
+	                              black calc(50% - 0.8px), 
+	                              black calc(50% + 0.8px), 
+	                              transparent calc(50% + 0.81px), 
+	                              transparent 100%); 
+	} */

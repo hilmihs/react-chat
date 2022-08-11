@@ -22,8 +22,10 @@ export default class ChatBox extends Component {
             });
     }
 
-    addChat = (title) => {
+    addChat = (username, title) => {
+        console.log(username, title)
         const id = Date.now()
+        this.setState(state => ({data: [...state.data, {id, username, title}]}))
         // this.setState(state => ({ data: [...state.data, { id, title, sent: true }] }))
         fetch('http://localhost:3000/todos', {
             method: 'POST',
@@ -31,7 +33,7 @@ export default class ChatBox extends Component {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: JSON.stringify({ id, title })
+            body: JSON.stringify({ id, username, title })
         }).then((response) => response.json())
             .then((data) => {
                 this.setState(state => ({ data: state.data.map((item) => {
