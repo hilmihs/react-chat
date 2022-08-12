@@ -13,11 +13,11 @@
     width: 89%;
     float: left;
     margin: 25px auto;
-    background: #e8e3e3;
+    background: rgba(45, 45, 45, 0.1);
     padding: 25px;
     flex-direction: column;
     font-weight: 900;
-    color: #fff;
+    color: rgba(45, 45, 45, 0.1);
     font-family: arial;
     position: relative;
     display: flex;
@@ -51,7 +51,7 @@
 .chat-text {
     color: black;
     display: flex;
-   
+    font-weight: 100;
     padding: 5px;
     display: flex;
   flex-direction: column;
@@ -117,3 +117,9 @@ color:yellow;
 	                              transparent calc(50% + 0.81px), 
 	                              transparent 100%); 
 	} */
+ .border-circle {
+    border-color: rgba(45, 45, 45, 0.1);
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 50%;
+ }

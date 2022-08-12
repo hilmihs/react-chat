@@ -4,7 +4,7 @@ export default function ChatOutput(props) {
         <div>
             <br></br>
             <div className="icon-chat line-in-middle">
-            <i class={"fa-solid fa-circle-minus fa-4x icon-size green-color"}></i>
+            <i class={"fa-solid fa-circle-minus fa-4x icon-size green-color border-circle"}></i>
             </div>
             <div className="box sb2">
                 <div className="chat-username">

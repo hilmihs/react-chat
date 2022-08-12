@@ -30,7 +30,7 @@ export default class ChatForm extends Component {
     return (
       <div>
         <div className="icon-chat">
-          <i class="fa-solid fa-circle-plus fa-4x icon-size teal-color"></i>
+          <i class="fa-solid fa-circle-plus fa-4x icon-size teal-color border-circle"></i>
         </div>
         <div className="box sb2">
           <form onSubmit={this.handleSubmit}>
