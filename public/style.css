@@ -80,9 +80,8 @@
     width: 10%;
     float: left;
     margin-top: -0px;
-    /* background-color: red; */
     padding: 13px;
-    
+    padding-bottom: 133px
     
 }
 .blue-color {
@@ -123,3 +122,14 @@ color:yellow;
     border-style: solid;
     border-radius: 50%;
  }
+
+
+ /* .line {
+    border-right: 3px solid #e8e3e3;
+    height: 98%;
+    left: 15px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: -1;
+ } */
