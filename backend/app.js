@@ -47,7 +47,7 @@ app.set('port', port);
 var server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3001",
+        origin: "http://13.212.114.9:3001",
         methods: ["GET", "POST"]
     }
 });

@@ -2,7 +2,9 @@ import { Component, useEffect } from "react";
 import ChatForm from "./ChatForm";
 import ChatList from "./ChatList";
 import { io } from "socket.io-client";
-const socket = io.connect("http://localhost:3000")
+
+const apiUrl = "http://13.212.114.9:3000"
+const socket = io.connect(`${apiUrl}`)
 
 export default class ChatBox extends Component {
     constructor(props) {
@@ -11,7 +13,7 @@ export default class ChatBox extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/chat')
+        fetch(`${apiUrl}/chat`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.data, `awal`)
@@ -27,7 +29,7 @@ export default class ChatBox extends Component {
 
     componentDidUpdate() {
     socket.on("receive_message", (data) => {
-        fetch('http://localhost:3000/chat')
+        fetch(`${apiUrl}/chat`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.data, `kedua`)
@@ -44,7 +46,7 @@ export default class ChatBox extends Component {
         socket.emit("send_message", { title: `${title}`, username: `${username  }` })
         const id = Date.now()
         this.setState(state => ({ data: [...state.data, { id, username, title }] }))
-        fetch('http://localhost:3000/chat', {
+        fetch(`${apiUrl}/chat`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -69,7 +71,7 @@ export default class ChatBox extends Component {
     removeChat = (id) => {
         console.log(`sampai sini`, id)
 
-        fetch(`http://localhost:3000/chat/${id}`, {
+        fetch(`${apiUrl}/chat/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,7 +82,7 @@ export default class ChatBox extends Component {
 
     }
     resendChat = (id, username, title) => {
-        fetch(`http://localhost:3000/chat/${id}`, {
+        fetch(`${apiUrl}/chat/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
